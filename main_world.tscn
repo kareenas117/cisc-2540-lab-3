@@ -1,0 +1,58 @@
+[gd_scene load_steps=5 format=3 uid="uid://buupem14hoq0k"]
+
+[ext_resource type="Script" uid="uid://cgsbp1psc6722" path="res://main_world.gd" id="1_43o5b"]
+[ext_resource type="PackedScene" uid="uid://diss5k6bdqr0x" path="res://player.tscn" id="1_itk02"]
+[ext_resource type="PackedScene" uid="uid://bxsbp0hoks1hi" path="res://coin.tscn" id="2_uoqbt"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_itk02"]
+size = Vector2(1563.125, 786)
+
+[node name="MainWorld" type="Node2D"]
+script = ExtResource("1_43o5b")
+
+[node name="WorldSprite" type="Sprite2D" parent="."]
+
+[node name="player" parent="." instance=ExtResource("1_itk02")]
+
+[node name="Coin" parent="." instance=ExtResource("2_uoqbt")]
+
+[node name="WallTop" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WallTop"]
+position = Vector2(776, -394)
+shape = SubResource("RectangleShape2D_itk02")
+
+[node name="WallBottom" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WallBottom"]
+position = Vector2(785, 996)
+shape = SubResource("RectangleShape2D_itk02")
+
+[node name="WallLeft" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WallLeft"]
+position = Vector2(-780, 392)
+shape = SubResource("RectangleShape2D_itk02")
+
+[node name="WallRight" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WallRight"]
+position = Vector2(1932, 279)
+shape = SubResource("RectangleShape2D_itk02")
+
+[node name="ScoreLabel" type="Label" parent="."]
+offset_left = 13.0
+offset_top = 600.0
+offset_right = 104.0
+offset_bottom = 634.0
+theme_override_font_sizes/font_size = 24
+text = "Score: 0"
+
+[node name="WinningLabel" type="Label" parent="."]
+visible = false
+offset_left = 490.0
+offset_top = 289.0
+offset_right = 704.0
+offset_bottom = 358.0
+theme_override_font_sizes/font_size = 50
+text = "You Win!"

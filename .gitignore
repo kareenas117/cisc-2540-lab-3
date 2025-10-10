@@ -1,0 +1,18 @@
+# Godot-specific ignores
+.import/
+export.cfg
+export_presets.cfg
+
+# OS-specific
+.DS_Store
+Thumbs.db
+
+# Backup and temporary files
+*.tmp
+*.bak
+*.old
+*.swp
+
+# VSCode and JetBrains IDEs
+.vscode/
+.idea/
